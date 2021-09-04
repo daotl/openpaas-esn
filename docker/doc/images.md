@@ -2,11 +2,13 @@
 
 We currently use several official images, and some custom ones:
 
-- Redis: redis:latest
-- MongoDB: mongo:3.2
-- Apache James: linagora/james-memory
-- Elastic Search: linagora/esn-elasticsearch and elasticsearch:1.5.2
+- Redis: redis
+- MongoDB: mongo
+- Apache James: linagora/tmail-backend
+- Elastic Search
 - Sabre DAV: linagora/esn-sabre
+
+For the currently used versions, see [images.json](../images.json).
 
 **linagora/esn-base**
 

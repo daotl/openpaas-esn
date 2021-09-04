@@ -1,10 +1,9 @@
 {
-  "elasticsearch": "docker.elastic.co/elasticsearch/elasticsearch:6.3.2",
-  "james": "linagora/james-memory",
-  "mongodb": "mongo:3.2",
-  "redis": "redis:latest",
-  "rabbitmq": "rabbitmq:3.6.5-management",
-  "sabre": "linagora/esn-sabre",
-  "esn": "linagora/esn",
-  "esn_base": "linagora/esn-base"
+  "elasticsearch": "elasticsearch:7.14.1",
+  "james": "linagora/tmail-backend:memory-0.4.0",
+  "mongodb": "mongo:5.0.2",
+  "redis": "redis:6.2.5",
+  "rabbitmq": "rabbitmq:3.9.5-management",
+  "sabre": "linagora/esn-sabre:1.9.0-rc8",
+  "esn": "linagora/esn:1.9.0-rc8"
 }
