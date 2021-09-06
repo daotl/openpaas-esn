@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker build -t linagora/esn .
+docker build -t daotl/esn .
 

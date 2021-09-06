@@ -6,6 +6,7 @@ require('../../../backend/core/db/mongo/models/configuration');
 var Configuration = mongoose.model('Configuration');
 
 module.exports = function(domains, host) {
+  var jmapScheme = process.env.JMAP_SCHEME && process.env.JMAP_SCHEME.toLowerCase() === 'https' ? 'https' : 'http';
   var jmapHost = process.env.JMAP_SERVER_HOST || host || 'localhost';
   var port = process.env.JMAP_SERVER_PORT || 1080;
   var path = process.env.JMAP_SERVER_PATH || 'jmap';
@@ -16,7 +17,7 @@ module.exports = function(domains, host) {
   var numberItemsPerPageOnBulkReadOperations = 30;
   var numberItemsPerPageOnBulkDeleteOperations = 30;
   var numberItemsPerPageOnBulkUpdateOperations = 30;
-  var jmapHostPort = 'http://' + jmapHost + ':' + port;
+  var jmapHostPort = jmapScheme + '://' + jmapHost + ':' + port;
   var api = jmapHostPort + '/' + path;
   var uploadUrl = process.env.JMAP_UPLOAD_URL || jmapHostPort + '/upload';
   var downloadUrl = process.env.JMAP_DOWNLOAD_URL || jmapHostPort + '/download/{blobId}/{name}';
