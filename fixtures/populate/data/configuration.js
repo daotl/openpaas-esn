@@ -6,7 +6,7 @@ require('../../../backend/core/db/mongo/models/configuration');
 var Configuration = mongoose.model('Configuration');
 
 module.exports = function(domains, host) {
-  var jmapScheme = process.env.JMAP_SCHEME && process.env.JMAP_SCHEME.toLowerCase() === 'https' ? 'https' : 'http';
+  var jmapScheme = process.env.JMAP_SERVER_SCHEME && process.env.JMAP_SCHEME.toLowerCase() === 'https' ? 'https' : 'http';
   var jmapHost = process.env.JMAP_SERVER_HOST || host || 'localhost';
   var port = process.env.JMAP_SERVER_PORT || 1080;
   var path = process.env.JMAP_SERVER_PATH || 'jmap';

@@ -1,0 +1,80 @@
+version: '3'
+
+services:
+
+  redis:
+    extends:
+      file: docker-compose.yml
+      service: redis
+    ports:
+      - 127.0.0.1:6379:6379
+
+  rabbitmq:
+    extends:
+      file: docker-compose.yml
+      service: rabbitmq
+    ports:
+      - 127.0.0.1:5672:5672
+      - 127.0.0.1:15672:15672
+
+  mongo:
+    extends:
+      file: docker-compose.yml
+      service: mongo
+    ports:
+      - 127.0.0.1:27017:27017
+
+  elasticsearch:
+    extends:
+      file: docker-compose.yml
+      service: elasticsearch
+    ports:
+      - 127.0.0.1:9200:9200
+
+  sabre:
+    extends:
+      file: docker-compose.yml
+      service: sabre
+    image: linagora/esn-sabre:branch-master
+    links:
+      - mongo
+    environment:
+      - ESN_HOST=${ESN_HOST}
+
+  # james:
+      # extends:
+      #   file: docker-compose.yml
+      #   service: james
+  #   depends_on:
+  #     - esn # to have configuration ready in shared volume
+  #   ports:
+  #     - 1080:80
+  #     - 1025:25
+  #     - 1110:110
+  #     - 1143:143
+  #     - 1465:465
+  #     - 1587:587
+  #     - 1993:993
+  #     - 8000:8000
+
+volumes:
+  openpaas_redis_data:
+    driver_opts:
+      type: none
+      device: ${VOLUMES_ROOT}/redis/data
+      o: bind
+  openpaas_rabbitmq_data:
+    driver_opts:
+      type: none
+      device: ${VOLUMES_ROOT}/rabbitmq/data
+      o: bind
+  openpaas_mongo_data:
+    driver_opts:
+      type: none
+      device: ${VOLUMES_ROOT}/mongo/data
+      o: bind
+  openpaas_elasticsearch_data:
+    driver_opts:
+      type: none
+      device: ${VOLUMES_ROOT}/elasticsearch/data
+      o: bind

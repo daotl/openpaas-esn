@@ -8,7 +8,7 @@ module.exports = {
     password: 'secret',
     accounts: [{
       type: 'email',
-      emails: ['admin@open-paas.org']
+      emails: ['admin@internetapi.cn']
     }]
   },
 
@@ -18,14 +18,14 @@ module.exports = {
     password: 'secret',
     accounts: [{
       type: 'email',
-      emails: ['user@open-paas.org']
+      emails: ['user@internetapi.cn']
     }]
   },
 
   DOMAIN: {
-    name: 'open-paas.org',
+    name: 'internetapi.cn',
     company_name: 'OpenPaaS',
-    hostnames: ['localhost', '127.0.0.1', 'open-paas.org']
+    hostnames: ['localhost', '127.0.0.1', 'internetapi.cn']
   }
 
 };

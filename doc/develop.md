@@ -43,7 +43,7 @@ From the ESN folder, run this docker-compose command:
 ESN_HOST="172.17.0.1" ESN_PATH="$PWD" docker-compose -f ./docker/dockerfiles/dev/docker-compose.yml up
 ```
 
-> You can save the above command (using an alias for example with an absolute path to the file) as you will need to run it everytime you need to start the containers.
+> You can save the above command (using an ali as for example with an absolute path to the file) as you will need to run it everytime you need to start the containers.
 
 > The ESN_HOST variable is used by containers to access the API of the ESN that you will run locally (This is the case for SabreDAV for example). This is useful when working on non Linux host since docker containers can not reach localhost since they run in a virtual machine.
 `172.17.0.1` is for linux-based systems, on OS X and windows enter the docker-machine IP (default machine is accessible at `192.168.99.100`)
@@ -82,6 +82,14 @@ nvm use
 With an Ubuntu installation, you need to install additional packages to run ESN:
 
     sudo apt-get install build-essential python-setuptools graphicsmagick graphicsmagick-imagemagick-compat libcairo2-dev libpango1.0-dev libgif-dev libjpeg-dev libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev build-essential g++
+
+For CentOS:
+
+    sudo dnf install dnf-plugins-core
+    sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+    sudo dnf config-manager --set-enabled powertools
+    sudo dnf groupinstall "Development Tools"
+    sudo dnf install python3 python3-setuptools GraphicsMagick cairo cairo-devel cairomm-devel pango pango-devel pangomm-devel giflib-devel libjpeg-turbo-devel
 
 #### 5. Install project dependencies
 OpenPaaS uses npm for its backend dependencies and bower for frontend dependencies.

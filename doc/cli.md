@@ -21,6 +21,7 @@ The global configuration is generated from the data in [../fixtures/esn-config/d
 - DAV_SERVER_PORT: default is `8001`
 - ELASTICSEARCH_HOST: default is `localhost`
 - ELASTICSEARCH_PORT: default is `9200`
+- JMAP_SERVER_SCHEME: default is `http`
 - JMAP_SERVER_HOST: default is `localhost`
 - AMQP_HOST: default is `amqp`
 - AMQP_PORT: default is `5672`
